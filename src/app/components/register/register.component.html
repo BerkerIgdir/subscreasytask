@@ -1,0 +1,124 @@
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-1">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Registration Info</h2>
+                    <form  method="POST">
+                        <div class="input-group">
+                            <input class="input--style-1"  [(ngModel)]="user.name"  #name="ngModel" type="text" placeholder="Name" name="name" minlength="3" required>
+                        </div>
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                        class="alert alert-danger">
+                    
+                      <div *ngIf="name.errors.required">
+                        Name is required.
+                      </div>
+                      <div *ngIf="name.errors.minlength">
+                        Name must be at least 4 characters long.
+                      </div>
+                    
+                    </div>
+                                <!-- <div class="input-group">
+                                    <input class="input--style-1 js-datepicker" type="text" placeholder="BIRTHDATE" name="birthday">
+                                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                </div> -->
+                            <!-- <div class="col-2">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="gender">
+                                            <option disabled="disabled" selected="selected">GENDER</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Other</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        <!-- <div class="input-group">
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="class">
+                                    <option disabled="disabled" selected="selected">CLASS</option>
+                                    <option>Class 1</option>
+                                    <option>Class 2</option>
+                                    <option>Class 3</option>
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div> -->
+                                <div class="input-group">
+                                    <input class="input--style-1"  [(ngModel)]="user.surname" #surname="ngModel" type="text" placeholder="Surname" name="surname" minlength="5" maxlength="25" required>
+                                </div>
+
+
+                            <div *ngIf="surname.invalid && (surname.dirty || surname.touched)"
+                                class="alert alert-danger">
+                              <div *ngIf="surname.errors.required">
+                                Surname is required.
+                              </div>
+                              <div *ngIf="surname.errors.minlength">
+                                Surname must be at least 4 characters long.
+                              </div>
+                            </div>
+
+
+                                <div class="input-group">
+                                    <input class="input--style-1"  [(ngModel)]="user.email" #email="ngModel" type="email" placeholder="Email" name="email" required>
+                                </div>
+
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                                class="alert alert-danger">
+                            
+                              <div *ngIf="email.errors.required">
+                                Email is required.
+                              </div>
+
+                            </div>
+
+                                <div class="input-group">
+                                    <input class="input--style-1"  [(ngModel)]="user.username" #username = "ngModel" type="text" placeholder="Username" name="username" minlength="5" maxlength="25" required>
+                                </div>
+
+                            <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                                class="alert alert-danger">
+                            
+                              <div *ngIf="username.errors.required">
+                                Username is required.
+                              </div>
+                              <div *ngIf="username.errors.minlength">
+                                Username must be at least 5 characters long.
+                              </div>
+                              <div *ngIf="username.errors.maxlength">
+                                Username must be 25 characters long max.
+                              </div>
+                            </div>  
+
+                                <div class="input-group">
+                                    <input class="input--style-1"  [(ngModel)]="user.password" #pass="ngModel" type="password" placeholder="Password"  minlength="5" maxlength="25" name="password" required> 
+                                </div>
+
+                            <div *ngIf="pass.invalid && (pass.dirty || pass.touched)"
+                                class="alert alert-danger">
+                            
+                              <div *ngIf="pass.errors.required">
+                                Password is required.
+                              </div>
+                              <div *ngIf="pass.errors.minlength">
+                                Password must be at least 5 characters long.
+                              </div>
+                              <div *ngIf="pass.errors.maxlength">
+                                Password must be 25 characters long max.
+                              </div>
+                            </div>  
+
+                        <div class="p-t-20">
+                            <button class="btn btn--radius btn--green"  (click)="createUser()" type="submit">Submit</button>
+                            <span></span>
+                            <button class="btn btn--radius btn--green"  routerLink="/login" type="Back to login page">Back To Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
